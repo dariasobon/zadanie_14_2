@@ -1,23 +1,3 @@
-/*var element = React.createElement('div', {}, 'Hello world!');
-ReactDOM.render(element, document.getElementById('app'));
-
-
-var element =
-    React.createElement('div', {},
-        React.createElement('h1', {}, "Lista filmów"),
-        React.createElement('ul', {},
-            React.createElement('li', {},
-                React.createElement('h2', {}, 'Władca Pierścieni'),
-                React.createElement('p', {}, 'Film o hobbitach, elfach, ludziach i... pierścieniu')
-            ),
-            React.createElement('li', {},
-                React.createElement('h2', {}, 'Nigdy w życiu'),
-                React.createElement('p', {}, 'Film o kobiecie, która raz jeszcze musi ułożyć sobie życie')
-            )
-        )
-    );
-ReactDOM.render(element, document.getElementById('app'));
-*/
 
 var movies = [{
         id: 1,
@@ -47,13 +27,13 @@ var movies = [{
 ];
 
 var card = movies.map(function(movie) {
-    return React.createElement('div', { className: 'card' },
+    return React.createElement('div', { className: 'card', key: movie.id },
         React.createElement('div', { className: 'leftCard' },
             React.createElement('img', { src: movie.imgSrc })
         ),
 
         React.createElement('div', { className: 'rightCard' },
-            React.createElement('h2', { key: movie.id }, movie.title),
+            React.createElement('h2', {}, movie.title),
             React.createElement('div', { className: 'rightCard_more' },
                 React.createElement('ul', {},
                     React.createElement('li', {}, movie.length)
@@ -70,11 +50,6 @@ var card = movies.map(function(movie) {
         )
     )
 });
-
-
-
-
-
 
 var element =
     React.createElement('section', {},
